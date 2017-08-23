@@ -1,0 +1,92 @@
+{
+	"rules": {
+		"no-unused-expression": false,
+		"no-duplicate-variable": true,
+		"no-unused-variable": true,
+		"curly": false,
+		"class-name": true,
+		"semicolon": [
+			false,
+			"never",
+			"ignore-interfaces",
+			"ignore-bound-class-methods"
+		],
+		"triple-equals": [
+			true,
+			"allow-null-check"
+		],
+		"quotemark": [
+			true,
+			"single",
+			"avoid-escape"
+		],
+		"trailing-comma": [
+			true,
+			{
+				"multiline": "never",
+				"singleline": "never"
+			}
+		],
+		"object-literal-sort-keys": false,
+		"arrow-parens": false,
+		"no-var-keyword": true,
+		"indent": [
+			true,
+			"spaces"
+		],
+		"no-trailing-whitespace": true,
+		"only-arrow-functions": [
+			true,
+			"allow-declarations",
+			"allow-named-functions"
+		],
+		"return-undefined": true,
+		"member-access": [
+			false,
+			"check-accessor",
+			"check-constructor"
+		],
+		"space-before-function-paren": true,
+		"interface-name": [
+			true,
+			"never-prefix"
+		],
+		"prefer-const": false,
+		"no-empty": false,
+		"align": [
+			false,
+			"arguments",
+			"parameters",
+			"statements"
+		],
+		"member-ordering": [
+			false,
+			{
+				"order": [
+					"static-field",
+					"instance-field",
+					"constructor",
+					"public-instance-method",
+					"protected-instance-method",
+					"private-instance-method"
+				]
+			}
+		],
+		"ordered-imports": [
+			false
+		],
+		"no-string-literal": false,
+		"no-shadowed-variable": false,
+		"no-bitwise": false,
+		"no-var-requires": false,
+		"variable-name": [
+			true,
+			"allow-leading-underscore"
+		],
+		"max-line-length": [
+			false
+		]
+	},
+	"enable": true,
+	"extends": "tslint:latest"
+}

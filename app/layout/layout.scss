@@ -1,0 +1,44 @@
+$app-nav-color-base: #324157;
+$app-nav-color-hover: #48576a;
+
+.app-layout  {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.app-header {
+  height: 40px;
+  // box-shadow: 0 1px 1px rgba(255,255,255,.4);
+  background-color: $app-nav-color-base;
+  color: #97a8be;
+  .app-logo {
+    width: 40px;
+    height: 40px;
+    border-right: 1px solid #555;
+    padding: 4px;
+  }
+}
+
+.app-sidebar {
+  width: 40px;
+  height: 100%;
+  background-color: $app-nav-color-base;
+  color: #97a8be;
+  text-align: center;
+  border-top: 1px solid #555;
+
+  a {
+    color: inherit;
+  }
+}
+
+.app-sidebar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    padding: 5px;
+    // border-top: 1px solid #777;
+  }
+}

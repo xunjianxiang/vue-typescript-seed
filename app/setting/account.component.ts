@@ -6,9 +6,9 @@ import Component from 'vue-class-component';
 @Component({
   template: `
     <el-card>
-      <el-button>Dashboard</el-button>
+      <el-button>Account</el-button>
     </el-card>
   `
 })
 
-export default class DashboardComponent extends Vue {}
+export default class AccountComponent extends Vue {}

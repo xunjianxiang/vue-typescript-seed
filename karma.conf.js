@@ -19,14 +19,15 @@ module.exports = config => {
 
     // list of files / patterns to load in the browser
     files: [
-      'https://unpkg.com/iview@2.1.0/dist/styles/iview.css',
+      'https://unpkg.com/element-ui@1.4.2/lib/theme-default/index.css',
       'https://unpkg.com/vue@2.4.2/dist/vue.min.js',
       'https://unpkg.com/vue-class-component@5.0.2/dist/vue-class-component.min.js',
-      'https://unpkg.com/iview@2.1.0/dist/iview.min.js'
+      'https://unpkg.com/element-ui@1.4.2/lib/index.js'
     ],
 
     mime: {
-      'text/x-typescript': ['ts']
+      'text/x-typescript': ['ts'],
+      'text/x-scss': ['scss']
     },
 
     // list of files to exclude
@@ -57,7 +58,11 @@ module.exports = config => {
               },
               {
                   test: /\.scss$/,
-                  use: 'style-loader!css-loader?sourceMap!sass-loader?sourceMap',
+                  use: [
+                    { loader: 'style-loader'},
+                    { loader: 'css-loader?sourceMap'},
+                    { loader: 'sass-loader?sourceMap'}
+                  ],
               },
               {
                   test: /\.eot|\.svg|\.ttf|\.woff|\.woff2$/,
@@ -70,7 +75,7 @@ module.exports = config => {
         'vue-class-component': 'VueClassComponent'
       },
       resolve: {
-          extensions: ['.js', '.ts']
+          extensions: ['.js', '.ts', '.scss']
       },
       devtool: "source-map"
     },
@@ -113,6 +118,7 @@ module.exports = config => {
   files.forEach(file => {
     KarmaConfig.files.push(file);
     KarmaConfig.preprocessors[file] = ['webpack'];
+    KarmaConfig.preprocessors['./app/**/*.scss'] = ['webpack'];
   })
   config.set(KarmaConfig)
 }

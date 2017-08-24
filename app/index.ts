@@ -1,5 +1,7 @@
 'use strict';
 
 import Vue from 'vue';
-import { AppComponent } from './app.component'
-new AppComponent().$mount('app');
+import AppComponent from './app.component';
+import router from './router';
+
+new AppComponent({router}).$mount('app');

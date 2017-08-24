@@ -1,12 +1,19 @@
 'use strict';
 
+import '../style/index.scss';
+
 import Vue from 'vue';
 import Component from 'vue-class-component';
 
+import LayoutComponent from './layout/layout.component';
+
 @Component({
   template: `
-    <card><Button type="primary">Primary</Button></card>
-  `
+    <app-layout><app-layout>
+  `,
+  components: {
+    'app-layout': LayoutComponent
+  }
 })
 
-export class AppComponent extends Vue {}
+export default class AppComponent extends Vue {}

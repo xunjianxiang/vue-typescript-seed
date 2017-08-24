@@ -16,6 +16,8 @@ const dist_page = path.resolve(dist_base, 'index.html');
 del.sync(dist_base);
 console.warn(`DELETE: ${ dist_base }\n`.cyan);
 
+const WebpackDevEnvironment = process.env.NODE_ENV === 'dev';
+
 module.exports = {
   entry: {
     'app': app_entry
@@ -23,7 +25,8 @@ module.exports = {
   output: {
     path: dist_base,
     publicPath: '/',
-    filename: `[name]-[chunkhash:8].min.js`
+    filename: `[name]-[${WebpackDevEnvironment ? 'hash' : 'chunkhash'}:8].min.js`,
+    chunkFilename: `[name]-[${WebpackDevEnvironment ? 'hash' : 'chunkhash'}:8].min.js`
   },
   module : {
     rules: [
@@ -59,6 +62,8 @@ module.exports = {
   ],
   externals: {
     'vue': 'Vue',
+    'vue-router': 'VueRouter',
+    'element-ui': 'ELEMENT',
     'vue-class-component': 'VueClassComponent'
   },
   resolve: {

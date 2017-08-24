@@ -8,10 +8,11 @@
     "webpack"
   ],
   "scripts": {
-    "karma": "karma start",
-    "dev": "NODE_ENV=dev karma start --no-single-run",
-    "prebuild": "npm run karma",
-    "build": "webpack -p --progress"
+    "unit:pro": "karma start",
+    "unit:dev": "NODE_ENV=dev karma start --no-single-run",
+    "prebuild": "npm run unit:pro",
+    "build": "webpack -p --progress",
+    "dev": "NODE_ENV=dev webpack-dev-server -d --hot --inline"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,7 @@
     "url-loader": "^0.5.9",
     "vue": "^2.4.2",
     "vue-class-component": "^5.0.2",
+    "vue-router": "^2.7.0",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.7.1"
   }

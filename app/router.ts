@@ -1,6 +1,9 @@
 'use strict';
 
+import Vue from 'vue';
 import VueRouter from 'vue-router';
+
+import progressbar from './progressbar/progressbar';
 
 const routes = [
   {
@@ -24,6 +27,18 @@ const routes = [
   }
 ]
 
-export default new VueRouter({
+const router = new VueRouter({
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  progressbar.start();
+  next();
+})
+router.afterEach((router) => {
+  setTimeout(() => {
+    progressbar.finish();
+  }, 500)
+})
+
+export default router;

@@ -1,0 +1,11 @@
+$progressbar-interval: 500ms;
+.app-progressbar {
+  position: fixed;
+  z-index: 1060;
+  width: 100%;
+  top: 0;
+  line-height: 0;
+  .el-progress-bar__inner {
+    transition: all $progressbar-interval linear;
+  }
+}

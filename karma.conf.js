@@ -21,7 +21,6 @@ module.exports = config => {
     files: [
       'https://unpkg.com/element-ui@1.4.2/lib/theme-default/index.css',
       'https://unpkg.com/vue@2.4.2/dist/vue.min.js',
-      'https://unpkg.com/vue-router@2.7.0/dist/vue-router.min.js',
       'https://unpkg.com/vue-class-component@5.0.2/dist/vue-class-component.min.js',
       'https://unpkg.com/element-ui@1.4.2/lib/index.js'
     ],
@@ -80,10 +79,6 @@ module.exports = config => {
       },
       devtool: "source-map"
     },
-
-    // webpackMiddleware: {
-    //   stats: 'errors-only'
-    // },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

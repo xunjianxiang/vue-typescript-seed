@@ -6,6 +6,6 @@ $progressbar-interval: 500ms;
   top: 0;
   line-height: 0;
   .el-progress-bar__inner {
-    transition: all $progressbar-interval linear;
+    transition: width $progressbar-interval linear;
   }
 }

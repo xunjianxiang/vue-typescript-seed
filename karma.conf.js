@@ -21,6 +21,7 @@ module.exports = config => {
     files: [
       'https://unpkg.com/element-ui@1.4.2/lib/theme-default/index.css',
       'https://unpkg.com/vue@2.4.2/dist/vue.min.js',
+      'https://unpkg.com/vue-router@2.7.0/dist/vue-router.min.js',
       'https://unpkg.com/vue-class-component@5.0.2/dist/vue-class-component.min.js',
       'https://unpkg.com/element-ui@1.4.2/lib/index.js'
     ],
@@ -59,9 +60,9 @@ module.exports = config => {
               {
                   test: /\.scss$/,
                   use: [
-                    { loader: 'style-loader'},
-                    { loader: 'css-loader?sourceMap'},
-                    { loader: 'sass-loader?sourceMap'}
+                    { loader: 'style-loader', options: { insertInto: 'body' } },
+                    { loader: 'css-loader?sourceMap' },
+                    { loader: 'sass-loader?sourceMap' }
                   ],
               },
               {

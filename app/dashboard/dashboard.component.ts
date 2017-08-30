@@ -6,17 +6,30 @@ import axios from 'axios';
 
 @Component({
   template: `
-    <el-card>
-      <el-button>Dashboard</el-button>
-    </el-card>
+    <div>
+      <el-card>
+        <el-button>Dashboard</el-button>
+      </el-card>
+      <table>
+        <tr v-for="item in items" @click="update(item)">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.age }}</td>
+        </tr>
+      </table>
+    </div>
   `
 })
 
 export default class DashboardComponent extends Vue {
-  private list: any[];
   mounted () {
-    axios.get('users').then(response => {
-      console.log(response)
-    })
+    this.$store.dispatch('users/get');
+  }
+  update (item: any) {
+    item.age = 22;
+    this.$store.dispatch('users/set', item);
+  }
+  private get items () {
+    return this.$store.state.users.list;
   }
 }

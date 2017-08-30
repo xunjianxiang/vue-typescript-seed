@@ -22,7 +22,9 @@ module.exports = config => {
       'https://unpkg.com/element-ui@1.4.2/lib/theme-default/index.css',
       'https://unpkg.com/vue@2.4.2/dist/vue.min.js',
       'https://unpkg.com/vue-class-component@5.0.2/dist/vue-class-component.min.js',
-      'https://unpkg.com/element-ui@1.4.2/lib/index.js'
+      'https://unpkg.com/element-ui@1.4.2/lib/index.js',
+      'node_modules/babel-polyfill/dist/polyfill.min.js',
+      './mock/index.ts'
     ],
 
     mime: {
@@ -37,7 +39,7 @@ module.exports = config => {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-
+      './mock/index.ts': ['webpack']
     },
 
     webpack: {

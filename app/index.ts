@@ -1,28 +1,16 @@
 'use strict';
 
 import Vue from 'vue';
-import Component from 'vue-class-component';
+
 import AppComponent from './app.component';
 import router from './router';
 
-import axios from 'axios';
-axios.interceptors.response.use((response) => {
-  if (response.status === 200) {
-    return response.data;
-  } else if (response.status === 404 ) {
-    return {
-      message: '404'
-    }
-  } else if (response.status === 500) {
-    return {
-      message: '500'
-    }
-  }
-})
+import './component.shim';
+import './http.shim';
 
-Component.registerHooks([
-  'beforeRouteEnter',
-  'beforeRouteLeave'
-])
+import store from '../store';
 
-new AppComponent({router}).$mount('app');
+new AppComponent({
+  store,
+  router
+}).$mount('app');
